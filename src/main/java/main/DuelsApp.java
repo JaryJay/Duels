@@ -36,7 +36,7 @@ public class DuelsApp {
 
 		// Create the game enabler.
 		// Don't change.
-		GameEnabler enabler = new GameEnabler(window, renderer, inputDecorator, bundleWrapper, "Nomads");
+		GameEnabler enabler = new GameEnabler(window, renderer, inputDecorator, bundleWrapper, "Duel Me Bro");
 		// Run the game enabler.
 		// Don't change.
 		enabler.enable();
