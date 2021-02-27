@@ -13,38 +13,68 @@ public class DuelsGameInput extends AbstractGameInput {
 
 	@Override
 	protected ArrayList<KeyPressedInputEventHandler> setKeyPressedInputHandlers() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<KeyPressedInputEventHandler> keyPressedInputEventHandlers = new ArrayList<>();
+		keyPressedInputEventHandlers.add((event) -> {
+			// Move
+			System.out.println("Key pressed!");
+			return true;
+		});
+		return keyPressedInputEventHandlers;
 	}
 
 	@Override
 	protected ArrayList<KeyReleasedInputEventHandler> setKeyReleasedInputHandlers() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<KeyReleasedInputEventHandler> keyReleasedInputEventHandlers = new ArrayList<>();
+		keyReleasedInputEventHandlers.add((event) -> {
+			// Stop moving
+			System.out.println("Key released!");
+			return true;
+		});
+		return keyReleasedInputEventHandlers;
 	}
 
 	@Override
 	protected ArrayList<MouseMovedInputEventHandler> setMouseMovedInputHandlers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected ArrayList<MouseReleasedInputEventHandler> setMouseReleasedInputHandlers() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<MouseMovedInputEventHandler> mouseMovedInputEventHandlers = new ArrayList<>();
+		mouseMovedInputEventHandlers.add((event) -> {
+			// Change direction
+			System.out.println("Mouse moved!");
+			return true;
+		});
+		return mouseMovedInputEventHandlers;
 	}
 
 	@Override
 	protected ArrayList<MousePressedInputEventHandler> setMousePressedInputHandlers() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<MousePressedInputEventHandler> mousePressedInputEventHandlers = new ArrayList<>();
+		mousePressedInputEventHandlers.add((event) -> {
+			// Shoot
+			System.out.println("Mouse pressed!");
+			return true;
+		});
+		return mousePressedInputEventHandlers;
+	}
+
+	@Override
+	protected ArrayList<MouseReleasedInputEventHandler> setMouseReleasedInputHandlers() {
+		ArrayList<MouseReleasedInputEventHandler> mouseReleasedInputEventHandlers = new ArrayList<>();
+		mouseReleasedInputEventHandlers.add((event) -> {
+			// Stop shooting
+			System.out.println("Mouse released!");
+			return true;
+		});
+		return mouseReleasedInputEventHandlers;
 	}
 
 	@Override
 	protected ArrayList<MouseScrolledInputEventHandler> setMouseScrolledInputHandlers() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<MouseScrolledInputEventHandler> mouseScrolledInputEventHandlers = new ArrayList<>();
+		mouseScrolledInputEventHandlers.add((event) -> {
+			// Stop shooting
+			System.out.println("Mouse scrolled! " + event.getAmount());
+			return true;
+		});
+		return mouseScrolledInputEventHandlers;
 	}
 
 }
