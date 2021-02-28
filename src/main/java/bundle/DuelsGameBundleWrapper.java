@@ -1,14 +1,14 @@
 package bundle;
 
-import bundle.data.DuelsGameData;
-import bundle.input.DuelsGameInput;
-import bundle.logic.DuelsGameLogic;
-import bundle.visuals.DuelsGameVisuals;
+import bundle.data.DuelsMainScreenGameData;
+import bundle.input.DuelsMainScreenGameInput;
+import bundle.logic.DuelsMainScreenGameLogic;
+import bundle.visuals.DuelsMainScreenGameVisuals;
 
 public class DuelsGameBundleWrapper extends GameBundleWrapper {
 
 	public DuelsGameBundleWrapper() {
-		super(new GameBundle(new DuelsGameData(), new DuelsGameInput(), new DuelsGameLogic(), new DuelsGameVisuals()));
+		super(new GameBundle(new DuelsMainScreenGameData(), new DuelsMainScreenGameInput(), new DuelsMainScreenGameLogic(), new DuelsMainScreenGameVisuals()));
 //		DuelsGameData data = new DuelsGameData();
 //		DuelsGameInput input = new DuelsGameInput();
 //		DuelsGameLogic logic = new DuelsGameLogic();

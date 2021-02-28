@@ -4,6 +4,7 @@ import bundle.DuelsGameBundleWrapper;
 import bundle.GameBundleWrapper;
 import bundle.input.inputdecorator.GameInputDecorator;
 import bundle.visuals.renderer.AbstractGameRenderer;
+import common.coordinates.PixelCoordinates;
 import engine.GameEnabler;
 import engine.ProcessingSketch;
 import network.DuelsClient;
@@ -15,7 +16,7 @@ public class DuelsApp {
 	}
 
 	private void run() {
-		DuelsClient gameClient = new DuelsClient("192.168.0.81");
+		DuelsClient gameClient = new DuelsClient("192.168.0.10");
 		Thread networkThread = new Thread(gameClient);
 		networkThread.start();
 
@@ -41,7 +42,7 @@ public class DuelsApp {
 
 		// Create the game enabler.
 		// Don't change.
-		GameEnabler enabler = new GameEnabler(window, renderer, inputDecorator, bundleWrapper, "Duel Me Bro");
+		GameEnabler enabler = new GameEnabler(window, renderer, inputDecorator, bundleWrapper, "Duel Me Bro", new PixelCoordinates(1600, 900));
 		// Run the game enabler.
 		// Don't change.
 		enabler.enable();

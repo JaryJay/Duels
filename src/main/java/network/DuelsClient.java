@@ -18,7 +18,7 @@ public class DuelsClient implements Runnable {
 	public DuelsClient(String host) {
 		super();
 		this.host = host;
-		source = new DuelsClientSource("Client");
+		source = new DuelsClientSource(0);
 	}
 
 	@Override
