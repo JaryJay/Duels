@@ -1,50 +1,23 @@
-package bundle.input;
+package bundle.game;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
-import bundle.GameBundle;
-import bundle.data.DuelsGameData;
-import bundle.data.DuelsMainScreenGameData;
-import bundle.data.gui.TextBox;
+import bundle.input.AbstractGameInput;
 import bundle.input.eventhandler.KeyPressedInputEventHandler;
 import bundle.input.eventhandler.KeyReleasedInputEventHandler;
 import bundle.input.eventhandler.MouseMovedInputEventHandler;
 import bundle.input.eventhandler.MousePressedInputEventHandler;
 import bundle.input.eventhandler.MouseReleasedInputEventHandler;
 import bundle.input.eventhandler.MouseScrolledInputEventHandler;
-import bundle.logic.DuelsGameLogic;
-import bundle.visuals.DuelsGameVisuals;
 
-public class DuelsMainScreenGameInput extends AbstractGameInput {
+public class DuelsGameInput extends AbstractGameInput {
 
 	@Override
 	protected ArrayList<KeyPressedInputEventHandler> setKeyPressedInputHandlers() {
 		ArrayList<KeyPressedInputEventHandler> keyPressedInputEventHandlers = new ArrayList<>();
 		keyPressedInputEventHandlers.add((event) -> {
-			TextBox textBox = ((DuelsMainScreenGameData) getBundle().getData()).getTextBox();
-			int keyCode = event.getKeyCode();
-			String text = textBox.getText();
-			switch (keyCode) {
-				case KeyEvent.VK_BACK_SPACE:
-					if (text.length() >= 1) {
-						textBox.setText(text.substring(0, text.length() - 1));
-					}
-					break;
-				case KeyEvent.VK_ENTER:
-					// Transition to game
-					if (text.length() >= 1) {
-						GameBundle bundle = new GameBundle(new DuelsGameData(), new DuelsGameInput(), new DuelsGameLogic(), new DuelsGameVisuals());
-						getBundle().getWrapper().transition(bundle);
-						((DuelsGameData) bundle.getData()).setUsername(text);
-					} else {
-						// Tell player to enter a name
-					}
-					break;
-				default:
-					textBox.setText(text + String.valueOf(Character.toChars(keyCode)));
-					break;
-			}
+			// Move
+			System.out.println("Key pressed!");
 			return true;
 		});
 		return keyPressedInputEventHandlers;
@@ -55,7 +28,7 @@ public class DuelsMainScreenGameInput extends AbstractGameInput {
 		ArrayList<KeyReleasedInputEventHandler> keyReleasedInputEventHandlers = new ArrayList<>();
 		keyReleasedInputEventHandlers.add((event) -> {
 			// Stop moving
-			System.out.println("Key released!");
+			System.out.println("Key released after transitioning!");
 			return true;
 		});
 		return keyReleasedInputEventHandlers;

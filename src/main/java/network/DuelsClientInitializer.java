@@ -1,5 +1,6 @@
 package network;
 
+import bundle.GameBundleWrapper;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -9,7 +10,10 @@ import io.netty.handler.codec.serialization.ObjectEncoder;
 
 public class DuelsClientInitializer extends ChannelInitializer<SocketChannel> {
 
-	public DuelsClientInitializer() {
+	private GameBundleWrapper wrapper;
+
+	public DuelsClientInitializer(GameBundleWrapper wrapper) {
+		this.wrapper = wrapper;
 	}
 
 	@Override
@@ -17,6 +21,6 @@ public class DuelsClientInitializer extends ChannelInitializer<SocketChannel> {
 		ChannelPipeline pipeline = channel.pipeline();
 		pipeline.addLast("decoder", new ObjectDecoder(ClassResolvers.cacheDisabled(null)));
 		pipeline.addLast("encoder", new ObjectEncoder());
-		pipeline.addLast("handler", new DuelsClientHandler());
+		pipeline.addLast("handler", new DuelsClientHandler(wrapper));
 	}
 }

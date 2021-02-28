@@ -1,4 +1,6 @@
-package bundle.data.gui;
+package bundle;
+
+import bundle.data.gui.AbstractGUI;
 
 public class TextBox extends AbstractGUI {
 

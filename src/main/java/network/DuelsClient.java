@@ -1,5 +1,6 @@
 package network;
 
+import bundle.GameBundleWrapper;
 import event.MessageSentGameEvent;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -14,10 +15,12 @@ public class DuelsClient implements Runnable {
 	private String host;
 	private int port = 8080;
 	private boolean closeRequested = false;
+	private GameBundleWrapper wrapper;
 
-	public DuelsClient(String host) {
+	public DuelsClient(String host, GameBundleWrapper wrapper) {
 		super();
 		this.host = host;
+		this.wrapper = wrapper;
 		source = new DuelsClientSource(0);
 	}
 
@@ -28,11 +31,12 @@ public class DuelsClient implements Runnable {
 			Bootstrap bootstrap = new Bootstrap();
 			bootstrap.group(group);
 			bootstrap.channel(NioSocketChannel.class);
-			bootstrap.handler(new DuelsClientInitializer());
+			bootstrap.handler(new DuelsClientInitializer(wrapper));
 			Channel channel = bootstrap.connect(host, port).sync().channel();
 			System.out.println("Client started at " + channel.localAddress());
 			while (!closeRequested) {
 				channel.writeAndFlush(new MessageSentGameEvent("Client says hello!", System.currentTimeMillis(), source));
+				Thread.sleep(100);
 			}
 			channel.close();
 		} catch (InterruptedException e) {

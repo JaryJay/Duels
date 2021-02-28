@@ -1,4 +1,6 @@
-package bundle.visuals;
+package bundle.mainscreen;
+
+import bundle.visuals.AbstractGameVisuals;
 
 public class DuelsMainScreenGameVisuals extends AbstractGameVisuals {
 

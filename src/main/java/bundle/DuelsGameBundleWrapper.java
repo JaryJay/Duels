@@ -1,9 +1,9 @@
 package bundle;
 
-import bundle.data.DuelsMainScreenGameData;
-import bundle.input.DuelsMainScreenGameInput;
-import bundle.logic.DuelsMainScreenGameLogic;
-import bundle.visuals.DuelsMainScreenGameVisuals;
+import bundle.mainscreen.DuelsMainScreenGameData;
+import bundle.mainscreen.DuelsMainScreenGameInput;
+import bundle.mainscreen.DuelsMainScreenGameLogic;
+import bundle.mainscreen.DuelsMainScreenGameVisuals;
 
 public class DuelsGameBundleWrapper extends GameBundleWrapper {
 

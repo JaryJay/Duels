@@ -1,4 +1,6 @@
-package bundle.logic;
+package bundle.mainscreen;
+
+import bundle.logic.AbstractGameLogic;
 
 public class DuelsMainScreenGameLogic extends AbstractGameLogic {
 
