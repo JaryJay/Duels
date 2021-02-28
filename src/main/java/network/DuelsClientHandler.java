@@ -1,16 +1,12 @@
-package network.client;
+package network;
 
-import bundle.data.DuelsGameData;
 import common.event.GameEvent;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
-public class GameClientHandler extends SimpleChannelInboundHandler<GameEvent> {
+public class DuelsClientHandler extends SimpleChannelInboundHandler<GameEvent> {
 
-	private DuelsGameData data;
-
-	public GameClientHandler(DuelsGameData data) {
-		this.data = data;
+	public DuelsClientHandler() {
 	}
 
 	@Override
@@ -23,6 +19,5 @@ public class GameClientHandler extends SimpleChannelInboundHandler<GameEvent> {
 //			data.addDisplayable(map);
 //		}
 	}
-
 
 }

@@ -11,7 +11,7 @@ public class DuelsGameData extends AbstractGameData {
 	@Override
 	public void init() {
 		states = new LimitedQueue<>(30);
-		states.add(new GameState());
+		states.add(new GameState(System.currentTimeMillis()));
 	}
 
 }

@@ -38,7 +38,7 @@ public class DuelsGameInput extends AbstractGameInput {
 		ArrayList<MouseMovedInputEventHandler> mouseMovedInputEventHandlers = new ArrayList<>();
 		mouseMovedInputEventHandlers.add((event) -> {
 			// Change direction
-			System.out.println("Mouse moved!");
+//			System.out.println("Mouse moved!");
 			return true;
 		});
 		return mouseMovedInputEventHandlers;
@@ -49,7 +49,7 @@ public class DuelsGameInput extends AbstractGameInput {
 		ArrayList<MousePressedInputEventHandler> mousePressedInputEventHandlers = new ArrayList<>();
 		mousePressedInputEventHandlers.add((event) -> {
 			// Shoot
-			System.out.println("Mouse pressed!");
+//			System.out.println("Mouse pressed!");
 			return true;
 		});
 		return mousePressedInputEventHandlers;
@@ -60,7 +60,7 @@ public class DuelsGameInput extends AbstractGameInput {
 		ArrayList<MouseReleasedInputEventHandler> mouseReleasedInputEventHandlers = new ArrayList<>();
 		mouseReleasedInputEventHandlers.add((event) -> {
 			// Stop shooting
-			System.out.println("Mouse released!");
+//			System.out.println("Mouse released!");
 			return true;
 		});
 		return mouseReleasedInputEventHandlers;
@@ -71,7 +71,7 @@ public class DuelsGameInput extends AbstractGameInput {
 		ArrayList<MouseScrolledInputEventHandler> mouseScrolledInputEventHandlers = new ArrayList<>();
 		mouseScrolledInputEventHandlers.add((event) -> {
 			// Stop shooting
-			System.out.println("Mouse scrolled! " + event.getAmount());
+//			System.out.println("Mouse scrolled! " + event.getAmount());
 			return true;
 		});
 		return mouseScrolledInputEventHandlers;

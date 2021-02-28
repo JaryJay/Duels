@@ -6,6 +6,7 @@ import bundle.input.inputdecorator.GameInputDecorator;
 import bundle.visuals.renderer.AbstractGameRenderer;
 import engine.GameEnabler;
 import engine.ProcessingSketch;
+import network.DuelsClient;
 
 public class DuelsApp {
 
@@ -14,6 +15,10 @@ public class DuelsApp {
 	}
 
 	private void run() {
+		DuelsClient gameClient = new DuelsClient("192.168.0.81");
+		Thread networkThread = new Thread(gameClient);
+		networkThread.start();
+
 		// Create an window.
 		// We use ProcessingSketch in Duels.
 		// To use a different window, assign to engine an instance of a different
