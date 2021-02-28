@@ -3,6 +3,7 @@ package bundle.data;
 import java.util.Queue;
 
 import common.util.LimitedQueue;
+import state.GameState;
 
 public class DuelsGameData extends AbstractGameData {
 
