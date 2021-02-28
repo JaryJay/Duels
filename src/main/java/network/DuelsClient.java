@@ -6,6 +6,7 @@ import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import source.DuelsClientSource;
 
 public class DuelsClient implements Runnable {
 
@@ -29,11 +30,10 @@ public class DuelsClient implements Runnable {
 			bootstrap.channel(NioSocketChannel.class);
 			bootstrap.handler(new DuelsClientInitializer());
 			Channel channel = bootstrap.connect(host, port).sync().channel();
-//			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			System.out.println("Client started at " + channel.localAddress());
-//			while (!closeRequested) {
-			channel.writeAndFlush(new MessageSentGameEvent("Client says hello!", System.currentTimeMillis(), source));
-//			}
+			while (!closeRequested) {
+				channel.writeAndFlush(new MessageSentGameEvent("Client says hello!", System.currentTimeMillis(), source));
+			}
 			channel.close();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
