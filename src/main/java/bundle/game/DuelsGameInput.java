@@ -16,8 +16,6 @@ public class DuelsGameInput extends AbstractGameInput {
 	protected ArrayList<KeyPressedInputEventHandler> setKeyPressedInputHandlers() {
 		ArrayList<KeyPressedInputEventHandler> keyPressedInputEventHandlers = new ArrayList<>();
 		keyPressedInputEventHandlers.add((event) -> {
-			// Move
-			System.out.println("Key pressed!");
 			return true;
 		});
 		return keyPressedInputEventHandlers;

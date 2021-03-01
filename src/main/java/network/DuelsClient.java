@@ -33,11 +33,13 @@ public class DuelsClient implements Runnable {
 			bootstrap.channel(NioSocketChannel.class);
 			bootstrap.handler(new DuelsClientInitializer(wrapper));
 			Channel channel = bootstrap.connect(host, port).sync().channel();
+
 			System.out.println("Client started at " + channel.localAddress());
 			while (!closeRequested) {
 				channel.writeAndFlush(new MessageSentGameEvent("Client says hello!", System.currentTimeMillis(), source));
 				Thread.sleep(100);
 			}
+
 			channel.close();
 		} catch (InterruptedException e) {
 			e.printStackTrace();

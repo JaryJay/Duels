@@ -39,7 +39,7 @@ public class DuelsMainScreenGameInput extends AbstractGameInput {
 						GameBundle bundle = new GameBundle(new DuelsLoadingData(), new DuelsLoadingInput(), new DuelsLoadingLogic(), new DuelsLoadingVisuals());
 						getBundle().getWrapper().transition(bundle);
 
-						DuelsClient gameClient = new DuelsClient("192.168.0.10", bundle.getWrapper());
+						Runnable gameClient = new DuelsClient("192.168.0.10", bundle.getWrapper());
 						Thread networkThread = new Thread(gameClient);
 						networkThread.start();
 					} else {

@@ -21,7 +21,6 @@ public class DuelsGameData extends AbstractGameData {
 		getToBeDisplayed().add(new GameBackground(0, 180, 0));
 		mainPlayer = new Player(id);
 		states = new LimitedQueue<>(30);
-		states.add(new GameState(System.currentTimeMillis()));
 	}
 
 	public LimitedQueue<GameState> getStates() {
