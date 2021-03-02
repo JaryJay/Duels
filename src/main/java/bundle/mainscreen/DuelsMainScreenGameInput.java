@@ -59,8 +59,6 @@ public class DuelsMainScreenGameInput extends AbstractGameInput {
 	protected ArrayList<KeyReleasedInputEventHandler> setKeyReleasedInputHandlers() {
 		ArrayList<KeyReleasedInputEventHandler> keyReleasedInputEventHandlers = new ArrayList<>();
 		keyReleasedInputEventHandlers.add((event) -> {
-			// Stop moving
-			System.out.println("Key released!");
 			return true;
 		});
 		return keyReleasedInputEventHandlers;
