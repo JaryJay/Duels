@@ -13,7 +13,7 @@ public class DuelsClient implements Runnable {
 
 	private DuelsClientSource source;
 	private String host;
-	private int port = 8080;
+	private int port = 12080;
 	private boolean closeRequested = false;
 	private GameBundleWrapper wrapper;
 
@@ -36,7 +36,7 @@ public class DuelsClient implements Runnable {
 
 			System.out.println("Client started at " + channel.localAddress());
 			while (!closeRequested) {
-				channel.writeAndFlush(new MessageSentGameEvent("Client says hello!", System.currentTimeMillis(), source));
+				channel.writeAndFlush(new MessageSentGameEvent("Client pings!", System.currentTimeMillis(), source));
 				Thread.sleep(100);
 			}
 

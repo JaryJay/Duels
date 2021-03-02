@@ -44,6 +44,7 @@ public class DuelsMainScreenGameInput extends AbstractGameInput {
 						networkThread.start();
 					} else {
 						// Tell player to enter a name
+						text = "you're an idiot, type a name you poo";
 					}
 					break;
 				default:

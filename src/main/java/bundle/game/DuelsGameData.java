@@ -2,14 +2,12 @@ package bundle.game;
 
 import bundle.data.AbstractGameData;
 import bundle.visuals.templates.GameBackground;
-import entity.Player;
 import misc.LimitedQueue;
 import state.GameState;
 
 public class DuelsGameData extends AbstractGameData {
 
 	private LimitedQueue<GameState> states;
-	private Player mainPlayer;
 	private long id;
 
 	public DuelsGameData(Long id) {
@@ -19,16 +17,11 @@ public class DuelsGameData extends AbstractGameData {
 	@Override
 	public void init() {
 		getToBeDisplayed().add(new GameBackground(0, 180, 0));
-		mainPlayer = new Player(id);
 		states = new LimitedQueue<>(30);
 	}
 
 	public LimitedQueue<GameState> getStates() {
 		return states;
-	}
-
-	public Player getMainPlayer() {
-		return mainPlayer;
 	}
 
 	public long getId() {
